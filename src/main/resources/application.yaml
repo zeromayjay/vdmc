@@ -1,0 +1,9 @@
+spring:
+  liquibase:
+    changeLog: "classpath:db/changelog/db.changelog-master.yaml"
+    enabled: true
+  management:
+    endpoints:
+      web:
+        exposure:
+          include=health,info,shutdown:
