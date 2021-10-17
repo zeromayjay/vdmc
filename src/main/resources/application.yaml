@@ -1,7 +1,14 @@
 spring:
+
   liquibase:
     changeLog: "classpath:db/changelog/db.changelog-master.yaml"
-    enabled: true
+    liquibase-schema: "game"
+
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/four-in-a-row?currentSchema=game'
+    username: vdmc_user
+    password: 12345
+
   management:
     endpoints:
       web:

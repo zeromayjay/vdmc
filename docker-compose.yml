@@ -5,6 +5,7 @@ services:
     environment:
       POSTGRES_USER: vdmc_user
       POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: four-in-a-row
       PGDATA: /data/postgres
     volumes:
       - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
