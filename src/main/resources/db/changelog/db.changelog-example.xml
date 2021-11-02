@@ -15,9 +15,9 @@
             <column name="gameId" type="uuid">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="field" type="varchar(100)">
+            <column name="gameBoard" type="jsonb">
             </column>
-            <column name="move" type="boolean"></column>
+            <column name="playersTurn" type="varchar(100)"></column>
         </createTable>
     </changeSet>
 
