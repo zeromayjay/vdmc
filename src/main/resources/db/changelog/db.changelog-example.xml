@@ -7,31 +7,18 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.3.xsd">
 
-    <changeSet author="nvoxland" id="1">
+    <changeSet author="firstChangeSet" id="1">
         <sql dbms="postgresql">
             CREATE SCHEMA game
         </sql>
-        <createTable tableName="person">
-            <column name="id" type="uuid">
+        <createTable tableName="datamodel_fourinarow">
+            <column name="gameId" type="uuid">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="firstname" type="varchar(50)"/>
-            <column name="lastname" type="varchar(50)">
-                <constraints nullable="false"/>
+            <column name="field" type="varchar(100)">
             </column>
-            <column name="state" type="char(2)"/>
+            <column name="move" type="boolean"></column>
         </createTable>
-    </changeSet>
-
-    <changeSet id="2" author="nvoxland">
-        <addColumn tableName="person">
-            <column name="username" type="varchar(8)"/>
-        </addColumn>
-    </changeSet>
-    <changeSet id="3" author="nvoxland">
-        <addLookupTable
-                existingTableName="person" existingColumnName="state"
-                newTableName="state" newColumnName="id" newColumnDataType="char(2)"/>
     </changeSet>
 
 </databaseChangeLog>
